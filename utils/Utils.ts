@@ -18,3 +18,22 @@ export const fillElementText = async (element:Locator, text:string): Promise<voi
 export const gotoPage = async (page: Page, url:string): Promise<void> =>{
     await page.goto(url)
 }
+
+export const createBaseUser = async (
+  page: Page,
+  email: string,
+  password: string,
+  username: string
+): Promise<APIResponse> => {
+  const response = await page.request.post("http://localhost:8000/api/users", {
+    data: {
+      user: {
+        email,
+        password,
+        username,
+      },
+    },
+  });
+
+  return response;
+}

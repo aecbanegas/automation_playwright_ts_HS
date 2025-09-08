@@ -95,96 +95,17 @@ Defects will be tracked in GitHub Issues, Jira, or Azure DevOps. Each bug must i
 
 | ID   | Title                                           | Gherkin Scenario | Steps | Expected Result | Priority | Type |
 |------|-------------------------------------------------|------------------|-------|-----------------|----------|------|
-| TC1  | User is able to Register - HP                   | ```gherkin
-Given a user at Sign Up screen
-When the user sets a valid Username
-And the user sets a valid email
-And the user sets a valid password
-And the user clicks Sign Up button
-Then the user is shown with a success label "Registration successful. Redirecting to login page..."
-And the user is redirected to Login screen
-``` | 1. The user sets a valid Username<br>2. The user sets a valid email<br>3. The user sets a valid password<br>4. The user clicks Sign Up button | The user is shown with a success label "Registration successful. Redirecting to login page..."<br>And the user is redirected to Login screen | High | E2E |
-| TC2  | User is not able to Register with Invalid credentials - SP | ```gherkin
-Given a user at Sign Up screen
-When the user sets a invalid Username
-And the user sets a invalid email
-And the user sets a invalid password
-And the user clicks Sign Up button
-Then the user is shown with an error label "Email: A user with that email already exists.
-Username: A user with that username already exists."
-``` | 1. The user sets a invalid Username<br>2. The user sets a invalid email<br>3. The user sets a valid password<br>4. The user clicks Sign Up button | The user is shown with an error label "Email: A user with that email already exists.<br>Username: A user with that username already exists." | High | UI |
-| TC3  | User is able to access Sign In screen from Sign Up - HP | ```gherkin
-Given a user at Sign Up screen
-When the user clicks "Have an account?" label
-Then the user is redirected to Sign In screen
-``` | 1. The user clicks "Have an account?" label | The user is redirected to Sign In screen | Medium | E2E |
-| TC4  | User is able to Sign In - HP                     | ```gherkin
-Given a user at Log In screen
-When the user sets a valid email
-And the user sets a valid password
-And the user clicks the Sign In button
-Then the user is redirected to Home screen
-And the user is able to see his username name replace Sign In and Sign Up buttons
-``` | 1. The user sets a valid email<br>2. The user sets a valid password<br>3. The user clicks the Sign In button | The user is redirected to Home screen<br>And the user is able to see his username name replace Sign In and Sign Up buttons | High | E2E |
-| TC5  | User is not able to sign in with invalid credentials - SP | ```gherkin
-Given a user at Log In screen
-When the user sets a invalid email
-And the user sets a invalid password
-And the user clicks the Sign In button
-Then the user is shown with an error label "Invalid email or password"
-``` | 1. The user sets a invalid email<br>2. The user sets a invalid password<br>3. The user clicks the Sign In button | The user is shown with an error label "Invalid email or password" | High | UI |
-| TC6  | User is able to access Sign Up screen from Sign In - HP | ```gherkin
-Given a user at Sign In screen
-When the user clicks "Need an account?" label
-Then the user is redirected to Sign Up screen
-``` | 1. The user clicks "Need an account?" label | The user is redirected to Sign Up screen | Medium | E2E |
-| TC7  | User is able to create a New Article - HP        | ```gherkin
-Given a user Home screen
-And the user has already logged in to an account
-When the user clicks the "New Article" button
-And the user sets an Article Title
-And the user sets an Article Description
-And the user set an Article on Write Your Article input
-And the user is able to set tags
-And the user clicks the "Publish Article" button
-Then the user is shown with a success label "Published successfully!"
-And the user is redirected to Home screen
-``` | 1. The user clicks the "New Article" button<br>2. The user sets an Article Title<br>3. The user sets an Article Description<br>4. The user set an Article on Write Your Article input<br>5. The user is able to set tags<br>6. The user clicks the "Publish Article" button | The user is shown with a success label "Published successfully!"<br>And the user is redirected to Home screen | High | E2E |
-| TC8  | User is able to edit an Article - HP             | ```gherkin
-Given a user at an Article screen
-And the Article is owned by the user
-When the user clicks Edit Article button
-And the user updates the Article Title
-And the user updates the Article Description
-And the user updates the Article on Write Your Article input
-And the user updates the tags
-And the user clicks the "Publish Article" button
-Then the user is shown with a success label "Published successfully!"
-And the user is redirected to recently edited article
-``` | 1. The user clicks the "Edit Article" button<br>2. The user sets an Article Title<br>3. The user sets an Article Description<br>4. The user set an Article on Write Your Article input<br>5. The user is able to set tags<br>6. The user clicks the "Publish Article" button | The user is shown with a success label "Published successfully!"<br>And the user is redirected to recently edited article | High | E2E |
-| TC9  | User is able to delete an Article - SP           | ```gherkin
-Given a user at an Article screen
-And the article is owned by the user
-When the user clicks Delete Article button
-And the user confirmes Article Deletion
-Then the Article is deleted
-And the user is redirected to Home screen
-``` | 1. The user clicks Delete Article button<br>2. The user confirmes Article Deletion | The Article is deleted<br>And the user is redirected to Home screen | High | E2E |
-| TC10 | User is able to Post Comments - HP               | ```gherkin
-Given a user at an Article screen
-And the user has logged in before
-When the user sets a Comment
-And the user clicks the Post Comment button
-Then the user is able to see the comment is shown at the article comments section
-``` | 1. The user sets a Comment<br>2. The user clicks the Post Comment button | The user is able to see the comment is shown at the article comments section | High | E2E |
-| TC11 | User is able to Delete Comments - SP             | ```gherkin
-Given a user at an Article screen
-And the user has logged in before
-And the user has commented before
-When the user clicks the delete comment button
-And the user confirms the Comment Deletion
-Then the user is able to see the comment is deleted
-``` | 1. The user clicks the delete comment button<br>2. The user confirms the Comment Deletion | The user is able to see the comment is deleted | High | E2E |
+| TC1  | User is able to Register - HP | `Given a user at Sign Up screen`<br>`When the user sets a valid Username`<br>`And the user sets a valid email`<br>`And the user sets a valid password`<br>`And the user clicks Sign Up button`<br>`Then the user is shown with a success label "Registration successful. Redirecting to login page..."`<br>`And the user is redirected to Login screen` | 1. The user sets a valid Username<br>2. The user sets a valid email<br>3. The user sets a valid password<br>4. The user clicks Sign Up button | The user is shown with a success label "Registration successful. Redirecting to login page..."<br>And the user is redirected to Login screen | High | E2E |
+| TC2  | User is not able to Register with Invalid credentials - SP | `Given a user at Sign Up screen`<br>`When the user sets a invalid Username`<br>`And the user sets a invalid email`<br>`And the user sets a invalid password`<br>`And the user clicks Sign Up button`<br>`Then the user is shown with an error label "Email: A user with that email already exists.`<br>`Username: A user with that username already exists."` | 1. The user sets a invalid Username<br>2. The user sets a invalid email<br>3. The user sets a valid password<br>4. The user clicks Sign Up button | The user is shown with an error label "Email: A user with that email already exists.<br>Username: A user with that username already exists." | High | UI |
+| TC3  | User is able to access Sign In screen from Sign Up - HP | `Given a user at Sign Up screen`<br>`When the user clicks "Have an account?" label`<br>`Then the user is redirected to Sign In screen` | 1. The user clicks "Have an account?" label | The user is redirected to Sign In screen | Medium | E2E |
+| TC4  | User is able to Sign In - HP | `Given a user at Log In screen`<br>`When the user sets a valid email`<br>`And the user sets a valid password`<br>`And the user clicks the Sign In button`<br>`Then the user is redirected to Home screen`<br>`And the user is able to see his username name replace Sign In and Sign Up buttons` | 1. The user sets a valid email<br>2. The user sets a valid password<br>3. The user clicks the Sign In button | The user is redirected to Home screen<br>And the user is able to see his username name replace Sign In and Sign Up buttons | High | E2E |
+| TC5  | User is not able to sign in with invalid credentials - SP | `Given a user at Log In screen`<br>`When the user sets a invalid email`<br>`And the user sets a invalid password`<br>`And the user clicks the Sign In button`<br>`Then the user is shown with an error label "Invalid email or password"` | 1. The user sets a invalid email<br>2. The user sets a invalid password<br>3. The user clicks the Sign In button | The user is shown with an error label "Invalid email or password" | High | UI |
+| TC6  | User is able to access Sign Up screen from Sign In - HP | `Given a user at Sign In screen`<br>`When the user clicks "Need an account?" label`<br>`Then the user is redirected to Sign Up screen` | 1. The user clicks "Need an account?" label | The user is redirected to Sign Up screen | Medium | E2E |
+| TC7  | User is able to create a New Article - HP | `Given a user Home screen`<br>`And the user has already logged in to an account`<br>`When the user clicks the "New Article" button`<br>`And the user sets an Article Title`<br>`And the user sets an Article Description`<br>`And the user set an Article on Write Your Article input`<br>`And the user is able to set tags`<br>`And the user clicks the "Publish Article" button`<br>`Then the user is shown with a success label "Published successfully!"`<br>`And the user is redirected to Home screen` | 1. The user clicks the "New Article" button<br>2. The user sets an Article Title<br>3. The user sets an Article Description<br>4. The user set an Article on Write Your Article input<br>5. The user is able to set tags<br>6. The user clicks the "Publish Article" button | The user is shown with a success label "Published successfully!"<br>And the user is redirected to Home screen | High | E2E |
+| TC8  | User is able to edit an Article - HP | `Given a user at an Article screen`<br>`And the Article is owned by the user`<br>`When the user clicks Edit Article button`<br>`And the user updates the Article Title`<br>`And the user updates the Article Description`<br>`And the user updates the Article on Write Your Article input`<br>`And the user updates the tags`<br>`And the user clicks the "Publish Article" button`<br>`Then the user is shown with a success label "Published successfully!"`<br>`And the user is redirected to recently edited article` | 1. The user clicks the "Edit Article" button<br>2. The user sets an Article Title<br>3. The user sets an Article Description<br>4. The user set an Article on Write Your Article input<br>5. The user is able to set tags<br>6. The user clicks the "Publish Article" button | The user is shown with a success label "Published successfully!"<br>And the user is redirected to recently edited article | High | E2E |
+| TC9  | User is able to delete an Article - SP | `Given a user at an Article screen`<br>`And the article is owned by the user`<br>`When the user clicks Delete Article button`<br>`And the user confirmes Article Deletion`<br>`Then the Article is deleted`<br>`And the user is redirected to Home screen` | 1. The user clicks Delete Article button<br>2. The user confirmes Article Deletion | The Article is deleted<br>And the user is redirected to Home screen | High | E2E |
+| TC10 | User is able to Post Comments - HP | `Given a user at an Article screen`<br>`And the user has logged in before`<br>`When the user sets a Comment`<br>`And the user clicks the Post Comment button`<br>`Then the user is able to see the comment is shown at the article comments section` | 1. The user sets a Comment<br>2. The user clicks the Post Comment button | The user is able to see the comment is shown at the article comments section | High | E2E |
+| TC11 | User is able to Delete Comments - SP | `Given a user at an Article screen`<br>`And the user has logged in before`<br>`And the user has commented before`<br>`When the user clicks the delete comment button`<br>`And the user confirms the Comment Deletion`<br>`Then the user is able to see the comment is deleted` | 1. The user clicks the delete comment button<br>2. The user confirms the Comment Deletion | The user is able to see the comment is deleted | High | E2E |
 
 Definitions:
 HP = Happy Path
