@@ -1,0 +1,12 @@
+{
+    "newArticle":{
+        "title":"Title",
+        "about":"Test description",
+        "article":"# TEST AUTOMATION OF ARTICLE"
+    },
+    "editArticle":{
+        "title":"Updated Title",
+        "about":"Updated Test description",
+        "article":"# Updated TEST AUTOMATION OF ARTICLE"
+    }
+}

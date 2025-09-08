@@ -1,0 +1,17 @@
+{
+    "createBaseUser":{
+        "username":"user8",
+        "email":"andreselias1404+user8@gmail.com",
+        "password":"andreselias1404+user8@gmail.com"
+    },
+    "invalidUser":{
+        "username":"user8",
+        "email":"andreselias1404+user8@gmail.com",
+        "password":"andreselias1404+user8@gmail.com"
+    },
+    "invalidSignInUser":{
+        "username":"user6",
+        "email":"test@test.com",
+        "password":"test@test.com"
+    }
+}
